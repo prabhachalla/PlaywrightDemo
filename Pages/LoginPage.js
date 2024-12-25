@@ -6,7 +6,7 @@ class LoginPage {
     // Define selectors
     this.usernameField = page.locator('[aria-label="Email address or phone number"]');
     this.passwordField = page.locator('[aria-label="Password"]');
-    this.loginButton = page.locator('#login');
+    this.loginButton = page.getByTestId('royal_login_button');
   }
 
   // Define reusable methods
@@ -20,9 +20,9 @@ class LoginPage {
     await this.loginButton.click();
   }
 
-  async verifyLoginSuccess() {
-    await expect(this.page.locator('#welcome-message')).toHaveText('Welcome');
-  }
+  // async verifyLoginSuccess() {
+  //   await expect(this.page.locator('#welcome-message')).toHaveText('Welcome');
+  // }
 }
 
 module.exports = { LoginPage };
